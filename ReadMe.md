@@ -64,3 +64,15 @@ gulp.task('compile:js', () =>
   })
 )
 ```
+## To start one one command, place the following in your package.json file
+```
+  "scripts": {
+    "start": "gulp serve"
+  },
+```
+
+### To start
+```
+npm start
+
+```
