@@ -1,0 +1,28 @@
+{
+  "name": "19-task-automation",
+  "version": "1.0.0",
+  "description": "To start, install the following\r ```\r $ npm install --save-dev gulp gulp-sass gulp-babel browser-sync del\r ```\r Make gulpfile.js in your directory and require the following:\r ```\r const gulp        = require('gulp');\r const sass        = require('gulp-sass');\r const babel       = require(\"gulp-babel\");\r const browserSync = require('browser-sync').create();\r const del         = require('del');\r ```\r ### To compile scss files:\r ```\r gulp.task('compile:sass', () =>\r   gulp\r     .src('src/scss/index.scss')\r     .pipe(sass())\r     .pipe(gulp.dest('src/css'))\r     .pipe(browserSync.stream())\r );\r ```\r ### To compile js files:\r ```\r gulp.task('compile:js', () =>\r   gulp\r     .src('src/js/*.js')\r     .pipe(\r       babel({\r         presets: ['@babel/env'],\r         plugins: ['@babel/plugin-proposal-class-properties']\r       })\r     )\r     .pipe(gulp.dest('dist/js'))\r     .pipe(browserSync.stream())\r );\r ```",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/polyfill": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/standalone": "^7.8.4",
+    "browser-sync": "^2.26.7",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify-es": "^2.0.0",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "scripts": {
+    "start": "gulp serve"
+  },
+  "author": "",
+  "license": "ISC"
+}
