@@ -46,6 +46,8 @@ gulp.task('compile:js', () =>
         plugins: ['@babel/plugin-proposal-class-properties']
       })
     )
+    .pipe(concat('bundle.min.js'))
+    .pipe(uglify().on('error', console.error))
     .pipe(gulp.dest('dist/js'))
     .pipe(browserSync.stream())
 );
